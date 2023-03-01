@@ -10,29 +10,29 @@ public class ArrayMap implements Map {
     private int initSize = 10;
     private Pair[] map;
 
-    public static class Pair implements Map.Entry {
+    public static class Pair<K, V> implements Map.Entry {
 
-        Object key;
-        Object value;
+        K key;
+        V value;
 
-        public Pair(Object key, Object value) {
+        public Pair(K key, V value) {
             this.key = key;
             this.value = value;
         }
 
         @Override
-        public Object getKey() {
+        public K getKey() {
             return key;
         }
 
         @Override
-        public Object getValue() {
+        public V getValue() {
             return value;
         }
 
         @Override
-        public Object setValue(Object value) {
-            return value;
+        public V setValue(Object value) {
+            return (V) value;
         }
     }
 
